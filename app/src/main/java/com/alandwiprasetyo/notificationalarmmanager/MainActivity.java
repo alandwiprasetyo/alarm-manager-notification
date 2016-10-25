@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             cal.set(Calendar.DAY_OF_MONTH, time.getDay());
             cal.set(Calendar.HOUR_OF_DAY, time.getHour());
 //            cal.set(Calendar.HOUR_OF_DAY, time.getHour() - Constants.REMINDER_BEFORE);
-            cal.set(Calendar.MINUTE, 12);
+            cal.set(Calendar.MINUTE, 18);
             cal.set(Calendar.SECOND, time.getSecond());
             long start = cal.getTimeInMillis();
             if (cal.before(Calendar.getInstance())) {
