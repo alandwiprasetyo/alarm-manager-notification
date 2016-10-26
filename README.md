@@ -44,6 +44,7 @@ Library for schedule notification based on timestamps data.
 
 # To do
   * Show notification before certain time of the event
+  * Support for many time format
 
 # Change Log
   **Version 1.0.0**
