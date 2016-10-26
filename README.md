@@ -3,6 +3,7 @@ Library for avoid force close when your application is running and will be taken
 # Usage
 1. Import the library into your project.
   * Grab via maven
+
     ```xml
     <dependency>
         <groupId>com.alandwiprasetyo.androilovschedule</groupId>
@@ -11,17 +12,22 @@ Library for avoid force close when your application is running and will be taken
         <type>pom</type>
     </dependency>
     ```
+
   * Grab via gradle
+
     ```groovy
     compile 'com.alandwiprasetyo.androidlovexception:androidlov exception:1.0.0'
-    ``` 
+    ```
+
 2. Write the following code in your java file.
+
     ```java
     String timeSchedule = "2016-10-26 21:07:00"; // format timestamps
     ScheduleNotification notification = new ScheduleNotification(0, this, NotifActivity.class, timeSchedule);
     notification.setId(0).setTitle("Title").setMessage("This is a message for notification");
     notification.save();
     ```
+
 # To do
   * Make error message multylanguage
 # Change Log
