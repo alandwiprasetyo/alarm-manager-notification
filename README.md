@@ -34,6 +34,13 @@ Library for schedule notification based on timestamps data.
     notification.setId(0).setTitle("Title").setMessage("This is a message for notification");
     notification.save();
     ```
+    or
+
+    ```java
+    ScheduleNotification notification = new ScheduleNotification(this, NotifActivity.class, timeSchedule);
+    notification.setTitle("Title").setMessage("This is a message for notification");
+    notification.save();
+    ```
 
 # To do
   * Show notification before certain time of the event
