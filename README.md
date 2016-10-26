@@ -16,7 +16,7 @@ Library for avoid force close when your application is running and will be taken
   * Grab via gradle
 
     ```groovy
-    compile 'com.alandwiprasetyo.androidlovexception:androidlov exception:1.0.0'
+    compile 'com.alandwiprasetyo.androilovschedule:androidlov-schedule-notification:1.0.0'
     ```
 
 2. Write the following code in your java file.
