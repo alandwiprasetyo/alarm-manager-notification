@@ -1,5 +1,5 @@
 # AndroidLovScheduleNotification
-Library for avoid force close when your application is running and will be taken to a new activity which contains hints
+Library for schedule notification based on timestamps data.
 # Usage
 1. Import the library into your project.
   * Grab via maven
@@ -36,11 +36,11 @@ Library for avoid force close when your application is running and will be taken
     ```
 
 # To do
-  * Make error message multylanguage
+  * Show notification before certain time of the event
 
 # Change Log
   **Version 1.0.0**
-  * Make class for handler exception
+  * Make class for schedule notification
 
 # License
     Copyright 2016 Alan Dwi Prasetyo
