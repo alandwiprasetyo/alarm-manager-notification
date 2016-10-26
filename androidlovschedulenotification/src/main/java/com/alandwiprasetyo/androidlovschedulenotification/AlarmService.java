@@ -1,4 +1,4 @@
-package com.alandwiprasetyo.notificationalarmmanager;
+package com.alandwiprasetyo.androidlovschedulenotification;
 
 /**
  * Created by alandwiprasetyo on 10/26/16.
@@ -15,6 +15,8 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.util.Log;
+
 /**
  * Created by root on 02/01/16.
  */
@@ -22,13 +24,11 @@ public class AlarmService extends Service {
 
     @Override
     public IBinder onBind(Intent arg0) {
-
         return null;
     }
 
     @Override
-    public void onCreate()  {
-
+    public void onCreate() {
         super.onCreate();
     }
 
@@ -36,25 +36,26 @@ public class AlarmService extends Service {
     @Override
     public void onStart(Intent intent, int startId) {
         super.onStart(intent, startId);
-        Bundle extras = intent.getExtras();
+        try {
+            Bundle extras = intent.getExtras();
+            displayNotification(extras.getString("title"), extras.getString("message"),
+                    extras.getString("time"), extras.getInt("icon"));
+        } catch (NullPointerException e) {
+            Log.e("AlarmService", "onStart: " + e.getMessage());
 
-//        displayNotification("HEHE","HOHOH");
-        displayNotification(extras.getString("name"),extras.getString("jam"));
+        }
     }
 
     @Override
-    public void onDestroy()  {
-
+    public void onDestroy() {
         super.onDestroy();
     }
 
-
     @SuppressLint("NewApi")
-    public void displayNotification(String name,String jam) {
+    public void displayNotification(String title, String message, String time, int icon) {
         Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
-        Intent mainIntent = new Intent(this, MainActivity.class);
-//        mainIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        Intent mainIntent = new Intent(this, ScheduleNotification.aClass);
         PendingIntent pIntent = PendingIntent.getActivity(this, 0, mainIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         NotificationManager nm = (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
@@ -63,15 +64,12 @@ public class AlarmService extends Service {
         builder.setContentIntent(pIntent)
                 .addAction(0, "View", pIntent)
                 .setAutoCancel(true)
-                .setSmallIcon(R.mipmap.ic_launcher)
-                .setTicker("Unixsys")
-                .setContentTitle(name)
-                .setContentText(jam)
+                .setSmallIcon(icon)
+                .setTicker(title)
+                .setContentTitle(title)
+                .setContentText(message)
                 .setSound(soundUri);
 
         nm.notify(0, builder.build());
-
-
     }
-
 }
