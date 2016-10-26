@@ -19,7 +19,14 @@ Library for avoid force close when your application is running and will be taken
     compile 'com.alandwiprasetyo.androilovschedule:androidlov-schedule-notification:1.0.0'
     ```
 
-2. Write the following code in your java file.
+2. Add permissions in your AndroidManifest.xml.
+
+    ```xml
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    ```
+
+3. Write the following code in your java file.
 
     ```java
     String timeSchedule = "2016-10-26 21:07:00"; // format timestamps
@@ -34,7 +41,7 @@ Library for avoid force close when your application is running and will be taken
 # Change Log
   **Version 1.0.0**
   * Make class for handler exception
-  
+
 # License
     Copyright 2016 Alan Dwi Prasetyo
     Licensed under the Apache License, Version 2.0 (the "License");
