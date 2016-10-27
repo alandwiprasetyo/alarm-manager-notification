@@ -9,9 +9,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
-/**
- * Created by root on 02/01/16.
- */
 public class Receiver extends BroadcastReceiver {
 
     @Override
