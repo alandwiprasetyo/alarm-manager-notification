@@ -17,9 +17,6 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
 
-/**
- * Created by root on 02/01/16.
- */
 public class AlarmService extends Service {
 
     @Override
